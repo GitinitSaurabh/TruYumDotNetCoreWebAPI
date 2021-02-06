@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "LWo8ad48zOLTcx1jzBnChOT80sYU7YYTaB8Reb4Zt4j4gjokispXvbok1yFn1MstT9UgoYD5IXT9rErQqVJCOw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\872691\\Desktop\\TruYum\\TryuYumAPIConsume\\TryuYumAPIConsume.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\872691\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

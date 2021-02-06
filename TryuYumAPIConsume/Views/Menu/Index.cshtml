@@ -1,0 +1,69 @@
+﻿@model IEnumerable<TryuYumAPIConsume.Models.Menu>
+@{ Layout = "_Layout"; ViewBag.Title = "All Menus";}
+
+<h2>Menus</h2>
+<a asp-action="AddMenu" class="btn btn-sm btn-primary">Add Item</a>
+
+
+<table class="table table-sm table-striped table-bordered m-2">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Category</th>
+            <th>Price</th>
+            <th>Active</th>
+            <th>Free Delivery</th>
+            <th>DateOfLaunch</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var Menu in Model)
+        {
+        <tr>
+            <td>@Menu.Id</td>
+            <td>@Menu.Name</td>
+            <td>@Menu.Category</td>
+            <td>@Menu.Price</td>
+            @{
+                @if (@Menu.IsActive == true)
+                {
+                    <td>Yes</td>
+                }
+                else
+                {
+                    <td>No</td>
+                }
+            }
+
+
+
+
+
+
+            @{
+                @if (@Menu.IsFreeDelivery == true)
+                {
+                    <td>Yes</td>
+                }
+                else
+                {
+                    <td>No</td>
+                }
+            }
+            <td>@Menu.DateOfLaunch</td>
+            <td>
+                <a asp-action="UpdateMenu" asp-route-id="@Menu.Id">
+                    <img src="/icon/edit.png" />
+                </a>
+            </td>
+            <td>
+                <form asp-action="DeleteMenu" method="post">
+                    <input type="hidden" value="@Menu.Id" name="MenuId" />
+                    <input type="image" src="/icon/close.png" />
+                </form>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>

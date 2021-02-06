@@ -1,0 +1,49 @@
+﻿@model Menu
+@{ Layout = "_Layout"; ViewBag.Title = "Get Menu by Id";}
+
+<h2>Get Menu by Id <a asp-action="Index" class="btn btn-sm btn-primary">Back</a></h2>
+<form method="post">
+    <div class="form-group">
+        <label for="id">Id:</label>
+        <input class="form-control" name="id" />
+    </div>
+    <div class="text-center panel-body">
+        <button type="submit" class="btn btn-sm btn-primary">Get Menu</button>
+    </div>
+</form>
+
+@if (Model != null && Model.Id != 0)
+{
+    <h2>Menu</h2>
+    <table class="table table-sm table-striped table-bordered m-2">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Address</th>
+                <th>Telephone</th>
+                <th>EMail</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>@Model.Name</td>
+
+                <td>@Model.Price</td>
+
+                <td>@Model.IsActive</td>
+
+                <td>@Model.IsFreeDelivery</td>
+                <td>@Model.DateOfLaunch</td>
+
+                <td>@Model.Category</td>
+            </tr>
+        </tbody>
+    </table>
+}
+else if(Model != null && Model.Id == 0 )
+{
+    <div class="text-center">
+        <h1>The Menu with the searched Id does not exist!!</h1>
+    </div>
+}
